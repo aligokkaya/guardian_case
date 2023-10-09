@@ -336,9 +336,22 @@ async def export_data(user: User = Depends(get_user), db=Depends(get_db)):
     df_list = []
     for item in data:
         df_list.append({
-            'column1': item.column1,
-            'column2': item.column2,
-            # Diğer sütunları buraya ekleyin
+            'segment': item.segment,
+            'country': item.country,
+            'product': item.product,
+            'discount_band': item.discount_band,
+            'units_sold': item.units_sold,
+            'manufacturing_price': item.manufacturing_price,
+            'sale_price': item.sale_price,
+            'gross_sales': item.gross_sales,
+            'discounts': item.discounts,
+            'sales': item.sales,
+            'cogs': item.cogs,
+            'profit': item.profit,
+            'date': item.date,
+            'month_number': item.month_number,
+            'month_name': item.month_name,
+            'year': item.year
         })
 
     df = pd.DataFrame(df_list)
