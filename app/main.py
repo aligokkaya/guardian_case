@@ -9,7 +9,7 @@ from jose import jwt
 import io
 import pandas as pd
 from fastapi.responses import StreamingResponse
-from app.model import SessionLocal,UserCreate,User,Data,DataCreate,DataUpdate
+from .model.model import SessionLocal,UserCreate,User,Data,DataCreate,DataUpdate
 # import sys
 # sys.path.insert(0, ".")
 app = FastAPI()
@@ -278,4 +278,4 @@ async def export_data(user: User = Depends(get_user), db=Depends(get_db)):
 
 import uvicorn
 if __name__ == "__main__":
-    uvicorn.run(app,host='0.0.0.0',port=5000)  
+    uvicorn.run(app,host='0.0.0.0',port=8000)  
